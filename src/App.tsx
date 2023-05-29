@@ -7,7 +7,10 @@ import { HomePage } from "./pages/homePage/HomePage";
 
 function App() {
   return (
-    <Header/>
+    <div>
+      <Header />
+      <HomePage />
+    </div>
   );
 }
 
