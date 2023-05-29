@@ -28,9 +28,9 @@ export const HomePage = () => {
 
   return (
     <div className="HomePage">
-      {/* <CardsList movies={movies} /> */}
+       <CardsList movies={movies} /> 
 
-      {movies.map((movie) => (
+      {/* {movies.map((movie) => (
         <div key={movie.id}>
           <div>{movie.id}</div>
           <img
@@ -39,7 +39,7 @@ export const HomePage = () => {
           ></img>
           <div>{movie.title}</div>
         </div>
-      ))}
+      ))} */}
     </div>
   );
 };
