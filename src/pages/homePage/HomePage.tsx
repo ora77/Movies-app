@@ -12,6 +12,7 @@ import { Movie } from "../../models/Movie";
 
 export const HomePage = () => {
 
+
   const [movies, setMovies] = useState<Movie[]>([]);
 
   useEffect(() => {

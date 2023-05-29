@@ -1,18 +1,19 @@
-import React from 'react'
+
+import React from "react";
+import "./Header.css";
+import { Link } from "react-router-dom";
+
+
 
 export const Header = () => {
-
-    const title = 'Movie App'
-    
-    const event = () => {
-        {}
-    }
-    return(
-    <div className="header">
-        <div className="title">
-            <h1>{title}</h1>
-        </div>
-    </div>
-    
-    );
-}
+  const title = "FlixView";
+  return (
+    <header className="header">
+      <h1 className="title">
+        <Link to={"/"} className="link">
+        {title}
+        </Link>
+        </h1>
+    </header>
+  );
+};
