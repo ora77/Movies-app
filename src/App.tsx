@@ -11,14 +11,13 @@ function App() {
     <Router>
       <div>
         <Header />
-  
+
 
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/details" element={<Details />} />
+          <Route path="/details/:id" element={<Details />} />
         </Routes>
-        <Link to="/details">
-        </Link>
+        <Link to="/details"></Link>
       </div>
     </Router>
 
