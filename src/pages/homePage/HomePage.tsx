@@ -30,6 +30,7 @@ export const HomePage = () => {
 
   return (
     <div className="HomePage">
+
       {/* <CardsList movies={movies} /> */}
 
       {movies.map((movie) => (
@@ -44,6 +45,9 @@ export const HomePage = () => {
         </div>
         </Link>
       ))}
+
+       <CardsList movies={movies} /> 
+
     </div>
   );
 };

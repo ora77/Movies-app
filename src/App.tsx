@@ -7,9 +7,11 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 function App() {
   return (
+
     <Router>
       <div>
         <Header />
+
 
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -18,6 +20,7 @@ function App() {
         <Link to="/details"></Link>
       </div>
     </Router>
+
   );
 }
 

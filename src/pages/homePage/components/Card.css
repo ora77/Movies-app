@@ -1,0 +1,15 @@
+.Card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    text-align: center;
+}
+.Card .CardTitle{
+    font-size: xX-large;
+    font-weight: 600;
+   
+    width: 300px;
+    padding: 0;
+    
+}
