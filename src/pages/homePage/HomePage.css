@@ -1,0 +1,13 @@
+.HomePage{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: black;
+    color: white;
+}
+
+.image{
+    width: 300px;
+    height: 400px;
+    margin: 20px;
+}

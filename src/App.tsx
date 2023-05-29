@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 function App() {
   return (
+
     <Router>
       <div>
         <Header />
@@ -19,6 +20,12 @@ function App() {
         </Link>
       </div>
     </Router>
+
+    <div>
+      <Header />
+      <HomePage />
+    </div>
+
   );
 }
 

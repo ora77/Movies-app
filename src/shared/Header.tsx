@@ -1,6 +1,12 @@
+
 import React from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
+
+import React from 'react'
+
+export const Header = () => {
+
 
 export const Header = () => {
   const title = "FlixView";
