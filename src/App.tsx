@@ -7,10 +7,11 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 function App() {
   return (
+
     <Router>
       <div>
         <Header />
-        <HomePage />
+  
 
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -20,6 +21,7 @@ function App() {
         </Link>
       </div>
     </Router>
+
   );
 }
 
