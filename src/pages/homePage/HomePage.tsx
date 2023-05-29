@@ -30,17 +30,6 @@ export const HomePage = () => {
   return (
     <div className="HomePage">
        <CardsList movies={movies} /> 
-
-      {/* {movies.map((movie) => (
-        <div key={movie.id}>
-          <div>{movie.id}</div>
-          <img
-            className="image"
-            src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-          ></img>
-          <div>{movie.title}</div>
-        </div>
-      ))} */}
     </div>
   );
 };

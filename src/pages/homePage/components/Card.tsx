@@ -1,17 +1,17 @@
 import React from 'react'
 
+import './Card.css'
+
 interface MovieProps{
-   id: number
    src: string
    title: string
 }
 
-export const Card = ({ id, src, title }: MovieProps) => {
+export const Card = ({ src, title }: MovieProps) => {
          return(
-           <div>
-               <div>{id}</div>
+           <div className='Card'>
                <img className="image" src={`https://image.tmdb.org/t/p/w500${src}`}></img>
-               <div>{title}</div>
+               <div className='CardTitle'>{title}</div>
             </div>
          )
        };
