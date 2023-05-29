@@ -8,7 +8,10 @@ import { Details } from './pages/homePage/components/Details';
 
 function App() {
   return (
-    <Header/>
+    <div>
+      <Header />
+      <HomePage />
+    </div>
   );
 }
 
