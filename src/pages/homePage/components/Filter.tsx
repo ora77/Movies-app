@@ -1,11 +1,11 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
-import { getCategories } from '../../../api/categorie'
-import { Categorie } from "../../../models/Categorie"
+import { getCategories } from '../../../api/category'
+import { Category } from "../../../models/category"
 
 export const Filter = () => {
 
-    const [categories, setCategories] = useState<Categorie[]>([])
+    const [categories, setCategories] = useState<Category[]>([]);
 
     useEffect(() => {
     const fetchCategories = async () => {

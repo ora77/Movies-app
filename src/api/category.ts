@@ -1,14 +1,14 @@
 import axios from "axios"
-import { Movie } from "../models/Movie"
+import { Category } from "../models/category"
 
 
 const API_KEY = process.env.REACT_APP_API_KEY as string
 
-export const getAllMovies = () => {
-    const allMovieURL = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=fr-EU`
+export const getCategories = () => {
+    const allMovieURL = `https://api.themoviedb.org/3/discover/movie/list?api_key=${API_KEY}&language=fr-EU`
 
     return axios
-        .get<{ results: Movie[]}>(allMovieURL)
+        .get<{ results: Category[]}>(allMovieURL)
         .then((response)  => {
             return response.data.results
         })

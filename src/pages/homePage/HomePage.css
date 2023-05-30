@@ -2,7 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background: black;
+    background: #1F1F1F;
     color: white;
 }
 

@@ -4,11 +4,12 @@ import { Search } from "./components/Search";
 import { Filter } from "./components/Filter";
 import { CardsList } from "./components/CardsList";
 
-import './HomePage.css';
+import "./HomePage.css";
 
-import { getAllMovies } from "../../api/films";
+import { getAllMovies } from "../../api/movie";
 import { useState, useEffect } from "react";
-import { Movie } from "../../models/Movie";
+import { Movie } from "../../models/movie";
+import { Link } from "react-router-dom";
 
 
 export const HomePage = () => {
@@ -30,6 +31,19 @@ export const HomePage = () => {
 
   return (
     <div className="HomePage">
+  
+      {movies.map((movie) => (
+        <Link to={`/details/${movie.id}`} key={movie.id}>
+          <div key={movie.id}>
+            <div>{movie.id}</div>
+            <img
+              className="image"
+              src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+            ></img>
+            <div>{movie.title}</div>
+          </div>
+        </Link>
+      ))}
       <CardsList movies={movies} />
       <Filter />
     </div>

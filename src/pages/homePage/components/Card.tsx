@@ -1,17 +1,20 @@
-import React from 'react'
+import React from "react";
 
-import './Card.css'
+import "./Card.css";
 
-interface MovieProps{
-   src: string
-   title: string
+interface MovieProps {
+  src: string;
+  title: string;
 }
 
 export const Card = ({ src, title }: MovieProps) => {
-         return(
-           <div className='Card'>
-               <img className="image" src={`https://image.tmdb.org/t/p/w500${src}`}></img>
-               <div className='CardTitle'>{title}</div>
-            </div>
-         )
-       };
+  return (
+    <div className="Card">
+      <img
+        className="image"
+        src={`https://image.tmdb.org/t/p/w500${src}`}
+      ></img>
+      <div className="CardTitle">{title}</div>
+    </div>
+  );
+};
