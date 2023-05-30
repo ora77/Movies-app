@@ -7,14 +7,18 @@ import { CardsList } from "./components/CardsList";
 import "./HomePage.css";
 
 import { getAllMovies } from "../../api/movie";
+import { getMovieByCategory } from "../../api/movie";
 import { useState, useEffect } from "react";
 import { Movie } from "../../models/movie";
 import { Link } from "react-router-dom";
+import { Category } from "../../models/category";
 
 
 export const HomePage = () => {
 
   const [movies, setMovies] = useState<Movie[]>([]);
+  const [selectedCategory, setSelectedCategory] = useState<Category | null>(null);
+  
 
   useEffect(() => {
     const fetchMovies = async () => {
@@ -29,37 +33,36 @@ export const HomePage = () => {
   }, []);
 
 
+
+
+  const fetchMoviesByCategory = async (categoryId : Category ) => {
+    try {
+      const moviesData = await getMovieByCategory(categoryId);
+      if (moviesData != null && moviesData.length > 0) {
+        setMovies(moviesData);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    if (selectedCategory != null) {
+      fetchMoviesByCategory(selectedCategory);
+    }
+  }, [selectedCategory]);
+
+
   return (
     <div className="HomePage">
-  
       {movies.map((movie) => (
-        <Link to={`/details/${movie.id}`} key={movie.id}>
-          <div key={movie.id}>
-            <div>{movie.id}</div>
-            <img
-              className="image"
-              src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-            ></img>
-            <div>{movie.title}</div>
-          </div>
-        </Link>
+        <Link to={`/details/${movie.id}`} key={movie.id}></Link>
       ))}
+      <Filter setSelectedCategory={setSelectedCategory} />
       <CardsList movies={movies} />
-      <Filter/>
     </div>
   );
 };
 
 
 
-
-// const categorie = async () => {
-//   try {
-//     const actionMoviesData = await getActionMovies();
-//     if (actionMoviesData != null && actionMoviesData.length > 0) {
-//       setMovies(actionMoviesData);
-//     }
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };

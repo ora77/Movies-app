@@ -1,5 +1,6 @@
 import axios from "axios";
 import { Movie } from "../models/movie";
+import { Category } from "../models/category";
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 const BASE_URL = "https://api.themoviedb.org/3";
@@ -26,3 +27,13 @@ export const getMovieById = async (movieId: string | undefined) => {
     console.log(err);
   }
 };
+
+export const getMovieByCategory =  (specificCategory : Category) => {
+  const SpecificCategoryUrl = `${BASE_URL}/discover/movie?api_key=${API_KEY}&with_genres=${specificCategory.id}`;
+   return axios
+    .get<{ results: Movie[] }>(SpecificCategoryUrl)
+    .then((response) => response.data.results)
+    .catch((error) => {
+      console.log(error);
+    });
+}
