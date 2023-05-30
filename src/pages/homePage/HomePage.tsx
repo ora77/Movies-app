@@ -10,8 +10,8 @@ import { getAllMovies } from "../../api/films";
 import { useState, useEffect } from "react";
 import { Movie } from "../../models/Movie";
 
-export const HomePage = () => {
 
+export const HomePage = () => {
 
   const [movies, setMovies] = useState<Movie[]>([]);
 
@@ -27,9 +27,25 @@ export const HomePage = () => {
     fetchMovies();
   }, []);
 
+
   return (
     <div className="HomePage">
-       <CardsList movies={movies} /> 
+      <CardsList movies={movies} />
+      <Filter />
     </div>
   );
 };
+
+
+
+
+// const categorie = async () => {
+//   try {
+//     const actionMoviesData = await getActionMovies();
+//     if (actionMoviesData != null && actionMoviesData.length > 0) {
+//       setMovies(actionMoviesData);
+//     }
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
