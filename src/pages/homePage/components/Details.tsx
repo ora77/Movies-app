@@ -5,9 +5,10 @@ import { useParams } from "react-router-dom";
 import { Movie } from "../../../models/movie";
 
 export const Details = () => {
-  const [movie, setMovie] = useState<null | Movie>(null); // remplacer "Details" par ...?
+  const [movie, setMovie] = useState<null | Movie>(null); 
 
   const { id } = useParams();
+  console.log(id);
 
   useEffect(() => {
     const test = async () => {
@@ -26,7 +27,6 @@ export const Details = () => {
       <h2 className="detail-title">{movie.title}</h2>
       <ul className="detail-list ">
         <li>{movie.release_date.slice(0, 4)}</li>
-        {/* methode sur la chaine de caractere pour avoir l'année? */}
         <li>{movie.runtime}</li>
       </ul>
       <figure>
