@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Details.css";
 import { getMovieById } from "../../../api/movie";
 import { useParams } from "react-router-dom";
-import { Movie } from "../../../models/movie";
+import { Movie } from "../../../models/movie"; 
 
 export const Details = () => {
   const [movie, setMovie] = useState<null | Movie>(null); 

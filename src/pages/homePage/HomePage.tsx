@@ -11,7 +11,9 @@ import { useState, useEffect } from "react";
 import { Movie } from "../../models/movie";
 import { Link } from "react-router-dom";
 
+
 export const HomePage = () => {
+
   const [movies, setMovies] = useState<Movie[]>([]);
 
   useEffect(() => {
@@ -26,10 +28,10 @@ export const HomePage = () => {
     fetchMovies();
   }, []);
 
+
   return (
     <div className="HomePage">
-      {/* <CardsList movies={movies} /> */}
-
+  
       {movies.map((movie) => (
         <Link to={`/details/${movie.id}`} key={movie.id}>
           <div key={movie.id}>
@@ -42,8 +44,22 @@ export const HomePage = () => {
           </div>
         </Link>
       ))}
-
       <CardsList movies={movies} />
+      <Filter />
     </div>
   );
 };
+
+
+
+
+// const categorie = async () => {
+//   try {
+//     const actionMoviesData = await getActionMovies();
+//     if (actionMoviesData != null && actionMoviesData.length > 0) {
+//       setMovies(actionMoviesData);
+//     }
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
