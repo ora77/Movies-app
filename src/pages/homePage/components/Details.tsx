@@ -1,18 +1,46 @@
-import React from "react";
-import {useParams} from "react-router-dom";
-
+import React, { useEffect, useState } from "react";
+import "./Details.css";
+import { getMovieById } from "../../../api/movie";
+import { useParams } from "react-router-dom";
+import { Movie } from "../../../models/movie";
 
 export const Details = () => {
-  const {id} = useParams();
+  const [movie, setMovie] = useState<null | Movie>(null); // remplacer "Details" par ...?
 
+  const { id } = useParams();
+
+  useEffect(() => {
+    const test = async () => {
+      const test = await getMovieById(1);
+      console.log(test);
+      setMovie(test);
+    };
+
+    test();
+  }, []);
+
+  if (movie == null) return <p>Loading...</p>;
 
   return (
-    <div>
-      <h1>title - ID: {id}</h1>
-      <p>synopsis</p>
-      <p>year</p>
-      <img />
-    </div>
+    <main className="detail-main">
+      <h2 className="detail-title">{movie.title}</h2>
+      <ul className="detail-list ">
+        <li>{movie.release_date.slice(0, 4)}</li>
+        {/* methode sur la chaine de caractere pour avoir l'année? */}
+        <li>{movie.runtime}</li>
+      </ul>
+      <figure>
+        <img
+          className="detail-poster"
+          src={`${movie.poster_path}`} //????
+        />
+      </figure>
+      <ul className="detail-list genres">
+        {movie.genres.map((x) => (
+          <li>x.name</li>
+        ))}
+      </ul>
+      <p className="detail-synopsis">{movie.overview}</p>
+    </main>
   );
 };
-
