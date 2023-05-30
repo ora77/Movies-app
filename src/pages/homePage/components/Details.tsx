@@ -32,7 +32,7 @@ export const Details = () => {
       <figure>
         <img
           className="detail-poster"
-          src={`${movie.poster_path}`} //???
+          src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} //???
         />
       </figure>
       <ul className="detail-list genres">
