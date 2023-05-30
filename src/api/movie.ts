@@ -15,7 +15,7 @@ export const getAllMovies = () => {
     });
 };
 
-export const getMovieById = async (movieId: number) => {
+export const getMovieById = async (movieId: string | undefined) => {
   const url = `${BASE_URL}/movie/${movieId}?api_key=${API_KEY}&language=fr-EU`;
   try {
     return await axios.get(url).then((res) => {
