@@ -45,7 +45,7 @@ export const HomePage = () => {
         </Link>
       ))}
       <CardsList movies={movies} />
-      <Filter />
+      <Filter/>
     </div>
   );
 };

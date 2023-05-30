@@ -23,7 +23,7 @@ export const Filter = () => {
 
 
     return (
-        <div>
+        <div className='Filter'>
             {categories.map((category) => (
                 <button key={category.id}>{category.name}</button>
             ))}
