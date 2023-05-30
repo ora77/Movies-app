@@ -13,9 +13,7 @@ import { Movie } from "../../models/movie";
 import { Link } from "react-router-dom";
 import { Category } from "../../models/category";
 
-
 export const HomePage = () => {
-
   const [movies, setMovies] = useState<Movie[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<Category | null>(null);
   
@@ -31,8 +29,6 @@ export const HomePage = () => {
     };
     fetchMovies();
   }, []);
-
-
 
 
   const fetchMoviesByCategory = async (categoryId : Category ) => {
@@ -59,10 +55,12 @@ export const HomePage = () => {
         <Link to={`/details/${movie.id}`} key={movie.id}></Link>
       ))}
       <Filter setSelectedCategory={setSelectedCategory} />
+
+  return (
+    <div className="HomePage">
+
       <CardsList movies={movies} />
     </div>
   );
 };
-
-
 

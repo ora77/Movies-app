@@ -25,7 +25,7 @@ export const Details = () => {
       <h2 className="detail-title">{movie.title}</h2>
       <ul className="detail-list ">
         <li>{movie.release_date.slice(0, 4)}</li>
-        <li>{movie.runtime}</li>
+        <li>{movie.runtime}m</li>
       </ul>
       <figure>
         <img
