@@ -1,0 +1,16 @@
+.header{
+    border: 1px solid gray;
+    background-color: #383838;
+}
+
+.title{
+    margin-left: 50px;
+    color: #0197D4;
+    font-size: xxx-large;
+    text-decoration: none;
+}
+
+.link{
+    text-decoration: none;
+    color: inherit;
+}

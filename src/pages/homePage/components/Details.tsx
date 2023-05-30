@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./Details.css";
 import { getMovieById } from "../../../api/Movie";
+import { useParams } from "react-router-dom";
+
 
 export const Details = () => {
   interface Details {
@@ -14,6 +16,9 @@ export const Details = () => {
   }
 
   const [movie, setMovie] = useState<null | Details>(null); // remplacer "Details" par ...?
+
+  const { id } = useParams();
+
 
   useEffect(() => {
     const test = async () => {
@@ -46,5 +51,11 @@ export const Details = () => {
       <ul className="detail-list genres">{genresArray}</ul>
       <p className="detail-synopsis">{movie.overview}</p>
     </main>
-  );
-};
+
+  )
+}
+
+
+
+ 
+
