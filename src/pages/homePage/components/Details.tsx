@@ -17,7 +17,7 @@ export const Details = () => {
 
   useEffect(() => {
     const test = async () => {
-      const test = await getMovieById(/* useParams */);
+      const test = await getMovieById(1);
       console.log(test);
       setMovie(test);
     };
