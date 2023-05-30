@@ -8,12 +8,10 @@ export const Details = () => {
   const [movie, setMovie] = useState<null | Movie>(null); 
 
   const { id } = useParams();
-  console.log(id);
 
   useEffect(() => {
     const test = async () => {
       const test = await getMovieById(id);
-      console.log(test);
       setMovie(test);
     };
 

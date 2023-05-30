@@ -1,33 +1,40 @@
-import React from 'react'
-import { useState, useEffect } from 'react';
-import { getCategories } from '../../../api/category'
-import { Category } from "../../../models/category"
+import React from "react";
+import { useState, useEffect } from "react";
+import { getCategories } from "../../../api/category";
+import { getMovieByCategory } from "../../../api/movie";
+import { Category } from "../../../models/category";
 
-export const Filter = () => {
+interface FilterProps {
+  setSelectedCategory: (category: Category | null) => void;
+}
 
-    const [categories, setCategories] = useState<Category[]>([]);
-
-    useEffect(() => {
-    const fetchCategories = async () => {
-      try {
-        const categoriesData = await getCategories();
-        if (categoriesData != null && categoriesData.length > 0) {
-          setCategories(categoriesData);
-        }
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    fetchCategories();
-  }, []);
+export const Filter = ({ setSelectedCategory }: FilterProps) => {
 
 
-    return (
-        <div>
-            {categories.map((category) => (
-                <button key={category.id}>{category.name}</button>
-            ))}
-        </div>
-    
-    )
-};  
+         const [categories, setCategories] = useState<Category[]>([]);
+
+         useEffect(() => {
+           const fetchCategories = async () => {
+             const categoriesData = await getCategories();
+             console.log("test", categoriesData);
+             if (categoriesData != null && categoriesData.length > 0) {
+               setCategories(categoriesData);
+               console.log(categories);
+             }
+           };
+           fetchCategories();
+         }, []);
+
+         return (
+           <div className="Filter">
+             {categories.map((category) => (
+               <button
+                 onClick={() => setSelectedCategory(category)}
+                 key={category.id}
+               >
+                 {category.name}
+               </button>
+             ))}
+           </div>
+         );
+       };
