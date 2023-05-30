@@ -5,13 +5,14 @@ import { useParams } from "react-router-dom";
 import { Movie } from "../../../models/movie";
 
 export const Details = () => {
-  const [movie, setMovie] = useState<null | Movie>(null); // remplacer "Details" par ...?
+  const [movie, setMovie] = useState<null | Movie>(null); 
 
   const { id } = useParams();
+  console.log(id);
 
   useEffect(() => {
     const test = async () => {
-      const test = await getMovieById(1);
+      const test = await getMovieById(id);
       console.log(test);
       setMovie(test);
     };
@@ -26,18 +27,17 @@ export const Details = () => {
       <h2 className="detail-title">{movie.title}</h2>
       <ul className="detail-list ">
         <li>{movie.release_date.slice(0, 4)}</li>
-        {/* methode sur la chaine de caractere pour avoir l'année? */}
         <li>{movie.runtime}</li>
       </ul>
       <figure>
         <img
           className="detail-poster"
-          src={`${movie.poster_path}`} //????
+          src={`${movie.poster_path}`} //???
         />
       </figure>
       <ul className="detail-list genres">
         {movie.genres.map((x) => (
-          <li>x.name</li>
+          <li>{x.name}</li>
         ))}
       </ul>
       <p className="detail-synopsis">{movie.overview}</p>
