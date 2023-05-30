@@ -1,3 +1,9 @@
+*{
+  background-color: #1F1F1F;
+  color: white;
+}
+
+
 .detail-main {
   width: 80%;
   margin: auto;
@@ -23,14 +29,14 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  height: 20em;
-  width: auto;
+  height: 400px;
+  width: 300px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
 }
 
 .genres li{
-  border: 1px solid black;
+  border: 1px solid white;
   border-radius: 2rem;
   padding: .75rem;
 }
