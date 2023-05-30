@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Details.css";
-import { getMovieDetailsById } from "../../../api/Api";
+import { getMovieById } from "../../../api/Movie";
 
 export const Details = () => {
   interface Details {
@@ -17,7 +17,7 @@ export const Details = () => {
 
   useEffect(() => {
     const test = async () => {
-      const test = await getMovieDetailsById(/* useParams */);
+      const test = await getMovieById(/* useParams */);
       console.log(test);
       setMovie(test);
     };

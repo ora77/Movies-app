@@ -16,7 +16,7 @@
 }
 
 .detail-list li{
-  font-size: 18px;
+  font-size: 1.25em;
 }
 
 .detail-poster {
@@ -37,5 +37,5 @@
 
 .detail-synopsis {
   margin-top: 2em;
-  font-size: 22px;
+  font-size: 1.5em;
 }
