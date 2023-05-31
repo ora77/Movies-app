@@ -6,10 +6,9 @@
     text-align: center;
 }
 .Card .CardTitle{
-    font-size: xX-large;
+    font-size: x-large;
     font-weight: 600;
-   
-    width: 300px;
+    width: 200px;
     padding: 0;
-    
+
 }

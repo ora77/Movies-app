@@ -5,14 +5,32 @@
 
 
 .detail-main {
-  width: 80%;
-  margin: auto;
+  margin: 20px;
+  padding: 0;
 }
 
 .detail-title {
   text-align: center;
+  font-size: xx-large;
 }
 
+.details-page{
+  display: flex;
+  /* align-items: center; */
+  
+}
+
+.right-block{
+  
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.BiTimeFive, .AiOutlineCalendar{
+  font-size : 30px;
+  color: orange;
+  margin: 5px;
+}
 .detail-list {
   list-style: none;
   display: flex;
@@ -22,17 +40,20 @@
 }
 
 .detail-list li{
-  font-size: 1.25em;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
 }
 
+.detail-list-genres{
+  
+}
 .detail-poster {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  height: 400px;
-  width: 300px;
+  height: 370px;
+  width: 270px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
+  margin: 0;
 }
 
 .genres li{
