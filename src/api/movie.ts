@@ -37,3 +37,14 @@ export const getMovieByCategory =  (specificCategory : Category) => {
       console.log(error);
     });
 }
+
+export const getMoviesBySearch = async (search: string | undefined) => {
+  const url = `${BASE_URL}/search/movie?query=${search}&api_key=${API_KEY}&include_adult=false&language=fr&page=1`;
+  return axios
+    .get<{ results: Movie[] }>(url)
+    .then((response) => response.data.results)
+    .catch((error) => {
+      console.log(error);
+    });
+};
+

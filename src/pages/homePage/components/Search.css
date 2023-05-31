@@ -1,0 +1,15 @@
+.Search{
+    display: flex;
+    justify-content: center;
+}
+.Search-input{
+    width: 500px;
+    height: 35px;
+    border-style: none;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background: white;
+    border-radius: 10px;
+    color: black;
+    font-size: large;
+}

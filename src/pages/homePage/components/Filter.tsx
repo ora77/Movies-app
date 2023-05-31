@@ -1,8 +1,11 @@
 import React from "react";
+
 import { useState, useEffect } from "react";
 import { getCategories } from "../../../api/category";
 import { getMovieByCategory } from "../../../api/movie";
 import { Category } from "../../../models/category";
+
+import './Filter.css'
 
 interface FilterProps {
   setSelectedCategory: (category: Category | null) => void;
@@ -29,8 +32,9 @@ export const Filter = ({ setSelectedCategory }: FilterProps) => {
            <div className="Filter">
              {categories.map((category) => (
                <button
-                 onClick={() => setSelectedCategory(category)}
-                 key={category.id}
+                className="button"
+                onClick={() => setSelectedCategory(category)}
+                key={category.id}
                >
                  {category.name}
                </button>

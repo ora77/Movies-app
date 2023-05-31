@@ -9,14 +9,14 @@ function App() {
   return (
 
     <Router>
-      <div>
+      
         <Header />
 
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/details/:id" element={<Details />} />
         </Routes>
-      </div>
+    
     </Router>
 
   );
