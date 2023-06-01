@@ -2,7 +2,6 @@ import React from "react";
 
 import { useState, useEffect } from "react";
 import { getCategories } from "../../../api/category";
-import { getMovieByCategory } from "../../../api/movie";
 import { Category } from "../../../models/category";
 
 import './Filter.css'
@@ -13,32 +12,31 @@ interface FilterProps {
 
 export const Filter = ({ setSelectedCategory }: FilterProps) => {
 
+  const [categories, setCategories] = useState<Category[]>([]);
 
-         const [categories, setCategories] = useState<Category[]>([]);
+  useEffect(() => {
+    const fetchCategories = async () => {
+      const categoriesData = await getCategories();
+      console.log(categoriesData);
+      if (categoriesData != null && categoriesData.length > 0) {
+        setCategories(categoriesData);
+        console.log(categories);
+      }
+    };
+    fetchCategories();
+  }, []);
 
-         useEffect(() => {
-           const fetchCategories = async () => {
-             const categoriesData = await getCategories();
-             console.log("test", categoriesData);
-             if (categoriesData != null && categoriesData.length > 0) {
-               setCategories(categoriesData);
-               console.log(categories);
-             }
-           };
-           fetchCategories();
-         }, []);
-
-         return (
-           <div className="Filter">
-             {categories.map((category) => (
-               <button
-                className="button"
-                onClick={() => setSelectedCategory(category)}
-                key={category.id}
-               >
-                 {category.name}
-               </button>
-             ))}
-           </div>
-         );
-       };
+  return (
+    <div className="Filter">
+      {categories.map((category) => (
+        <button
+        className="button"
+        onClick={() => setSelectedCategory(category)}
+        key={category.id}
+        >
+          {category.name}
+        </button>
+      ))}
+    </div>
+  );
+};

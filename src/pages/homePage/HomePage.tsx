@@ -9,9 +9,14 @@ import "./HomePage.css";
 import { getAllMovies } from "../../api/movie";
 import { getMovieByCategory } from "../../api/movie";
 import { getMoviesBySearch } from "../../api/movie";
+import { getPages} from "../../api/movie";
+
 import { useState, useEffect } from "react";
 import { Movie } from "../../models/movie";
 import { Category } from "../../models/category";
+
+import { IoIosArrowBack } from "react-icons/io";
+import { IoIosArrowForward } from "react-icons/io";
 
 export const HomePage = () => {
 
@@ -19,6 +24,7 @@ export const HomePage = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<Category | null>(null);
   const [searchValue, setSearchValue] = useState("");
+  const [currentPage, setcurrentPage] = useState(1);
 
   // ***************************** FETCH ALL MOVIES **************************************
   useEffect(() => {
@@ -60,6 +66,20 @@ export const HomePage = () => {
     fetchMoviesBySearch();
   }, [searchValue]);
 
+  //*********************** PAGINATION ***********************/
+  
+  
+  useEffect(() => {
+    const fetchPage = async () => {
+      const moviesDataOnPage = await getPages(currentPage, selectedCategory?.id);
+      if (moviesDataOnPage != null && moviesDataOnPage.length > 0) {
+        setMovies(moviesDataOnPage);
+      }
+    };
+
+    fetchPage();
+  }, [currentPage]);
+
   return (
     <div className="HomePage">
       <Search onSearch={setSearchValue} />
@@ -67,7 +87,25 @@ export const HomePage = () => {
         <Filter setSelectedCategory={setSelectedCategory} />
         <CardsList movies={movies} />
       </div>
-      <button>2</button>
+      <div className="pagination">
+        <button
+          className="buttonPage"
+          onClick={() => setcurrentPage(currentPage - 1)}
+        >
+          <IoIosArrowBack className="arrow" />
+        </button>
+        <button className="buttonPage">
+          {currentPage === 1 ? "" : currentPage - 1}
+        </button>
+        <button className="buttonPage current">{currentPage}</button>
+        <button className="buttonPage ">{currentPage + 1}</button>
+        <button
+          className="buttonPage"
+          onClick={() => setcurrentPage(currentPage + 1)}
+        >
+          <IoIosArrowForward className="arrow" />
+        </button>
+      </div>
     </div>
   );
 };
