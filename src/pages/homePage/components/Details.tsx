@@ -7,10 +7,10 @@ import { AiOutlineCalendar } from "react-icons/ai";
 
 import { getMovieById } from "../../../api/movie";
 import { useParams } from "react-router-dom";
-import { Movie } from "../../../models/movie"; 
+import { Movie } from "../../../models/movie";
 
 export const Details = () => {
-  const [movie, setMovie] = useState<null | Movie>(null); 
+  const [movie, setMovie] = useState<null | Movie>(null);
 
   const { id } = useParams();
 
@@ -48,8 +48,8 @@ export const Details = () => {
         </figure>
         <div className="right-block">
           <ul className="detail-list-genre genres">
-            {movie.genres.map((x) => (
-              <li>{x.name}</li>
+            {movie.genres.map((x, i) => (
+              <li key={"genre_" + i}>{x.name}</li>
             ))}
           </ul>
           <p className="detail-synopsis">{movie.overview}</p>
