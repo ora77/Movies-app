@@ -2,7 +2,7 @@ import axios from "axios";
 import { Movie } from "../models/movie";
 import { Category } from "../models/category";
 
-const API_KEY = process.env.REACT_APP_API_KEY;
+const API_KEY = import.meta.env.VITE_API_KEY;
 const BASE_URL = "https://api.themoviedb.org/3";
 
 export const getAllMovies = () => {
@@ -28,15 +28,15 @@ export const getMovieById = async (movieId: string | undefined) => {
   }
 };
 
-export const getMovieByCategory =  (specificCategory : Category) => {
+export const getMovieByCategory = (specificCategory: Category) => {
   const SpecificCategoryUrl = `${BASE_URL}/discover/movie?api_key=${API_KEY}&with_genres=${specificCategory.id}`;
-   return axios
+  return axios
     .get<{ results: Movie[] }>(SpecificCategoryUrl)
     .then((response) => response.data.results)
     .catch((error) => {
       console.log(error);
     });
-}
+};
 
 export const getMoviesBySearch = async (search: string | undefined) => {
   const url = `${BASE_URL}/search/movie?query=${search}&api_key=${API_KEY}&include_adult=false&language=fr&page=1`;
