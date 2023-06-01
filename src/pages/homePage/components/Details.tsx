@@ -47,7 +47,7 @@ export const Details = () => {
           />
         </figure>
         <div className="right-block">
-          <ul className="detail-list genres">
+          <ul className="detail-list-genre genres">
             {movie.genres.map((x) => (
               <li>{x.name}</li>
             ))}
