@@ -14,11 +14,10 @@ import { Movie } from "../../models/movie";
 import { Category } from "../../models/category";
 
 export const HomePage = () => {
+
   //********************* USE STATE **************************
   const [movies, setMovies] = useState<Movie[]>([]);
-  const [selectedCategory, setSelectedCategory] = useState<Category | null>(
-    null
-  );
+  const [selectedCategory, setSelectedCategory] = useState<Category | null>(null);
   const [searchValue, setSearchValue] = useState("");
 
   // ***************************** FETCH ALL MOVIES **************************************

@@ -1,6 +1,7 @@
 .header{
-    border: 1px solid gray;
-    background-color: #383838;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 11%, rgba(92, 92, 92, 1) 49%, rgba(0, 0, 0, 1) 90%);
+  
 }
 
 .title{
