@@ -24,6 +24,7 @@ export const HomePage = () => {
   useEffect(() => {
     const fetchMovies = async () => {
       const moviesData = await getAllMovies();
+      console.log("getAllMovies : " + getAllMovies());
       if (moviesData != null && moviesData.length > 0) setMovies(moviesData);
     };
     fetchMovies();
@@ -66,6 +67,7 @@ export const HomePage = () => {
         <Filter setSelectedCategory={setSelectedCategory} />
         <CardsList movies={movies} />
       </div>
+      <button>2</button>
     </div>
   );
 };

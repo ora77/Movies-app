@@ -7,7 +7,7 @@ const BASE_URL = "https://api.themoviedb.org/3";
 
 export const getAllMovies = () => {
   const allMovieURL = `${BASE_URL}/discover/movie?api_key=${API_KEY}&language=fr-EU`;
-
+  
   return axios
     .get<{ results: Movie[] }>(allMovieURL)
     .then((response) => response.data.results)
@@ -47,4 +47,3 @@ export const getMoviesBySearch = async (search: string | undefined) => {
       console.log(error);
     });
 };
-
