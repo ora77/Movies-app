@@ -15,3 +15,29 @@
     height: 300px;
     margin: 20px;
 }
+
+.pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    
+}
+.buttonPage{
+    color: orange;
+    font-size: 30px;
+    padding: 0px;
+    width: 30px;
+    height: 40px;
+    border: none
+}
+.current{
+    font-size: 40px;
+    padding-bottom: 5px;
+}
+.arrow{
+    cursor: pointer;
+}
+.arrow:hover{
+    font-size: 35px;
+}

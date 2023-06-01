@@ -14,13 +14,11 @@ export const CardsList = ({ movies }: MoviesProps) => {
   return (
     <div className="CardsList">
       {movies.map((movie) => (
-        
-        <Link to={`/details/${movie.id}`}>
         <div key={movie.id}>
-          <Card src={movie.poster_path} title={movie.title} />
+          <Link to={`/details/${movie.id}`}>
+            <Card src={movie.poster_path} title={movie.title} />
+          </Link>
         </div>
-        </Link>
-        
       ))}
     </div>
   );

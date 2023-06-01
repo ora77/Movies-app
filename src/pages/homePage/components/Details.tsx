@@ -36,7 +36,7 @@ export const Details = () => {
         </li>
         <li>
           <BiTimeFive className="BiTimeFive" />
-          {movie.runtime}m
+          {movie.runtime}
         </li>
       </ul>
       <div className="details-page">
