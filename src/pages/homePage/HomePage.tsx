@@ -88,17 +88,26 @@ export const HomePage = () => {
         <CardsList movies={movies} />
       </div>
       <div className="pagination">
+        
         <button
           className="buttonPage"
           onClick={() => setcurrentPage(currentPage - 1)}
         >
           <IoIosArrowBack className="arrow" />
         </button>
-        <button className="buttonPage">
+
+        <button className="buttonPage" onClick={() => setcurrentPage(currentPage - 1)}>
+          
           {currentPage === 1 ? "" : currentPage - 1}
         </button>
+
         <button className="buttonPage current">{currentPage}</button>
-        <button className="buttonPage ">{currentPage + 1}</button>
+        <button
+          className="buttonPage "
+          onClick={() => setcurrentPage(currentPage + 1)}
+        >
+          {currentPage + 1}
+        </button>
         <button
           className="buttonPage"
           onClick={() => setcurrentPage(currentPage + 1)}

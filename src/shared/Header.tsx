@@ -11,9 +11,9 @@ export const Header = () => {
     <header className="header">
       <h1 className="title">
         <Link to={"/"} className="link">
-        {title}
+          {title}
         </Link>
-        </h1>
+      </h1>
     </header>
   );
 };

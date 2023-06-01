@@ -9,9 +9,7 @@ function App() {
   return (
 
     <Router>
-      
         <Header />
-
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/details/:id" element={<Details />} />
