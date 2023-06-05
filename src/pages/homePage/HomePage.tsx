@@ -39,6 +39,7 @@ export const HomePage = () => {
   // ***************************** FETCH CATEGORY **************************************
 
   useEffect(() => {
+    setcurrentPage(1)
     const fetchMoviesByCategory = async (categoryId: Category) => {
       const moviesData = await getMovieByCategory(categoryId);
       if (moviesData != null && moviesData.length > 0) {
@@ -71,6 +72,8 @@ export const HomePage = () => {
   
   useEffect(() => {
     const fetchPage = async () => {
+      if(currentPage < 1)
+      { setcurrentPage(1);}
       const moviesDataOnPage = await getPages(currentPage, selectedCategory?.id);
       if (moviesDataOnPage != null && moviesDataOnPage.length > 0) {
         setMovies(moviesDataOnPage);
@@ -91,7 +94,7 @@ export const HomePage = () => {
             className="buttonPage"
             onClick={() => setcurrentPage(currentPage - 1)}
           >
-            {currentPage === 1 ? "" : <IoIosArrowBack className="arrow" />}
+            {currentPage > 1 ? <IoIosArrowBack className="arrow" /> : null}
           </button>
 
           <button
