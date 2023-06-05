@@ -81,39 +81,40 @@ export const HomePage = () => {
   }, [currentPage]);
 
   return (
-    <div className="HomePage">
-      <Search onSearch={setSearchValue} />
-      <div className="HomeFilm">
-        <Filter setSelectedCategory={setSelectedCategory} />
+    <div className="HomeFilm">
+      <Filter setSelectedCategory={setSelectedCategory} />
+      <div className="right-block">
+        <Search onSearch={setSearchValue} />
         <CardsList movies={movies} />
-      </div>
-      <div className="pagination">
-        
-        <button
-          className="buttonPage"
-          onClick={() => setcurrentPage(currentPage - 1)}
-        >
-          <IoIosArrowBack className="arrow" />
-        </button>
+        <div className="pagination">
+          <button
+            className="buttonPage"
+            onClick={() => setcurrentPage(currentPage - 1)}
+          >
+            {currentPage === 1 ? "" : <IoIosArrowBack className="arrow" />}
+          </button>
 
-        <button className="buttonPage" onClick={() => setcurrentPage(currentPage - 1)}>
-          
-          {currentPage === 1 ? "" : currentPage - 1}
-        </button>
+          <button
+            className="buttonPage"
+            onClick={() => setcurrentPage(currentPage - 1)}
+          >
+            {currentPage === 1 ? "" : currentPage - 1}
+          </button>
 
-        <button className="buttonPage current">{currentPage}</button>
-        <button
-          className="buttonPage "
-          onClick={() => setcurrentPage(currentPage + 1)}
-        >
-          {currentPage + 1}
-        </button>
-        <button
-          className="buttonPage"
-          onClick={() => setcurrentPage(currentPage + 1)}
-        >
-          <IoIosArrowForward className="arrow" />
-        </button>
+          <button className="buttonPage current">{currentPage}</button>
+          <button
+            className="buttonPage "
+            onClick={() => setcurrentPage(currentPage + 1)}
+          >
+            {currentPage + 1}
+          </button>
+          <button
+            className="buttonPage"
+            onClick={() => setcurrentPage(currentPage + 1)}
+          >
+            <IoIosArrowForward className="arrow" />
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -1,21 +1,21 @@
 .Filter{
-    
-    background: blue;
-    height: 100vh;
-    width: 200px;
-   
+    margin-top: 98px;
+    background: black;
+    display: flex;
+    flex-direction: column;
 }
 
 .button{
-
-    width: 150px;
-    height: 70px;
+    width: 170px;
+    height: 50px;
     border: none;
-    background: black;
-    font-size: large;
+    background: rgb(24, 24, 24);
+    font-size: medium;
     font-weight: 600;
     cursor: pointer;
+    color: white;
+
 }
 .button:hover{
-    border: solid white 2px;
+    border: solid rgba(255, 255, 255, 0.531) 2px;
 }

@@ -7,16 +7,15 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 function App() {
   return (
-
-    <Router>
+    <div className="app-movie">
+      <Router>
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/details/:id" element={<Details />} />
         </Routes>
-    
-    </Router>
-
+      </Router>
+    </div>
   );
 }
 
