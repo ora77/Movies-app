@@ -51,12 +51,13 @@ export const getMoviesBySearch = async (search: string | undefined) => {
 };
 
 export const getPages = async(movieOnPage : number, categoryId?: number) => {
-  console.log(categoryId)
+  
   let url = `${BASE_URL}/discover/movie?api_key=${API_KEY}&language=fr-EU&page=${movieOnPage}`;
   if(categoryId)
   {
     url += `&with_genres=${categoryId}`;
   }
+
   return axios
     .get<{ results: Movie[] }>(url)
     .then((response) => response.data.results)
