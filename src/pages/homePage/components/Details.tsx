@@ -27,18 +27,6 @@ export const Details = () => {
 
   return (
     <main className="detail-main">
-      <h2 className="detail-title">{movie.title}</h2>
-
-      <ul className="detail-list ">
-        <li>
-          <AiOutlineCalendar className="AiOutlineCalendar" />
-          {movie.release_date.slice(0, 4)}
-        </li>
-        <li>
-          <BiTimeFive className="BiTimeFive" />
-          {movie.runtime}
-        </li>
-      </ul>
       <div className="details-page">
         <figure>
           <img
@@ -47,6 +35,19 @@ export const Details = () => {
           />
         </figure>
         <div className="right-block">
+          <h2 className="detail-title">{movie.title}</h2>
+
+          <ul className="detail-list ">
+            <li>
+              <AiOutlineCalendar className="AiOutlineCalendar" />
+              {movie.release_date.slice(0, 4)}
+            </li>
+            <li>
+              <BiTimeFive className="BiTimeFive" />
+              {movie.runtime}
+            </li>
+          </ul>
+
           <ul className="detail-list-genre genres">
             {movie.genres.map((x, i) => (
               <li key={"genre_" + i}>{x.name}</li>

@@ -15,7 +15,7 @@ export const CardsList = ({ movies }: MoviesProps) => {
     <div className="CardsList">
       {movies.map((movie) => (
         <div key={movie.id}>
-          <Link to={`/details/${movie.id}`}>
+          <Link className="link-card"to={`/details/${movie.id}`}>
             <Card src={movie.poster_path} title={movie.title} />
           </Link>
         </div>

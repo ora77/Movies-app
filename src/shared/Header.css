@@ -1,17 +1,18 @@
 .header{
-    background: rgb(0, 0, 0);
-    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 11%, rgba(92, 92, 92, 1) 49%, rgba(0, 0, 0, 1) 90%);
-  
+    background-color: black;
 }
 
 .title{
-    margin-left: 50px;
+    padding-left: 50px;
+    margin: 0;
     color: #f3ad21;
     font-size: xxx-large;
     text-decoration: none;
+    background: black;
 }
 
 .link{
     text-decoration: none;
     color: inherit;
+    background: black;
 }
