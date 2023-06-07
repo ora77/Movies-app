@@ -7,13 +7,16 @@ import { AiOutlineCalendar } from "react-icons/ai";
 
 import { getMovieById } from "../../../api/movie";
 import { useParams } from "react-router-dom";
-import { Movie } from "../../../models/movie";
+import { Movie } from "../../../models/Movie";
 
+// Details is a page, it should not be here but at the same level as HomePage
 export const Details = () => {
   const [movie, setMovie] = useState<null | Movie>(null);
 
   const { id } = useParams();
 
+  // Careful with the names of the variables !
+  // Don't let this kind of meaningless names for a technical test 
   useEffect(() => {
     const test = async () => {
       const test = await getMovieById(id);

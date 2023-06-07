@@ -17,6 +17,7 @@ export const Filter = ({ setSelectedCategory }: FilterProps) => {
   useEffect(() => {
     const fetchCategories = async () => {
       const categoriesData = await getCategories();
+      // console logs to remove
       console.log(categoriesData);
       if (categoriesData != null && categoriesData.length > 0) {
         setCategories(categoriesData);

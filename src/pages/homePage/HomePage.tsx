@@ -12,7 +12,7 @@ import { getMoviesBySearch } from "../../api/movie";
 import { getPages} from "../../api/movie";
 
 import { useState, useEffect } from "react";
-import { Movie } from "../../models/movie";
+import { Movie } from "../../models/Movie";
 import { Category } from "../../models/category";
 
 import { IoIosArrowBack } from "react-icons/io";
@@ -30,6 +30,7 @@ export const HomePage = () => {
   useEffect(() => {
     const fetchMovies = async () => {
       const moviesData = await getAllMovies();
+      // Remove console logs before delivering a code :)
       console.log("getAllMovies : " + getAllMovies());
       if (moviesData != null && moviesData.length > 0) setMovies(moviesData);
     };
@@ -84,6 +85,10 @@ export const HomePage = () => {
   }, [currentPage]);
 
   return (
+    // Careful with the conventions, classes are mainly in kebab-case in the project
+    // And the names of the classes are not obvious, it should contain a technical element
+    // (is it a container, a button...) and an indication of the element it concerns on the page
+    // Ex here : home-container / pagination-container etc.
     <div className="HomeFilm">
       <Filter setSelectedCategory={setSelectedCategory} />
       <div className="right-block">

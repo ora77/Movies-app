@@ -1,8 +1,6 @@
 import axios from "axios";
-import { Movie } from "../models/movie";
+import { Movie } from "../models/Movie";
 import { Category } from "../models/category";
-
-
 
 const API_KEY = import.meta.env.VITE_API_KEY;
 const BASE_URL = "https://api.themoviedb.org/3";
@@ -40,6 +38,7 @@ export const getMovieByCategory = (specificCategory: Category) => {
     });
 };
 
+// You could have tried to paginate the search results as well ;)
 export const getMoviesBySearch = async (search: string | undefined) => {
   const url = `${BASE_URL}/search/movie?query=${search}&api_key=${API_KEY}&include_adult=false&language=fr&page=1`;
   return axios
