@@ -17,7 +17,6 @@ import { Category } from "../../models/category";
 
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
-import { usePromptContext } from "../../context/PromptContext";
 
 export const HomePage = () => {
 
@@ -84,14 +83,12 @@ export const HomePage = () => {
     fetchPage();
   }, [currentPage]);
 
-  const {showPrompt, setShowPrompt} = usePromptContext();
 
   return (
     <div className="HomeFilm">
       <Filter setSelectedCategory={setSelectedCategory} />
       <div className="right-block">
         <Search onSearch={setSearchValue} />
-        <button onClick={() => setShowPrompt(true)}>prompt</button>
         <CardsList movies={movies} />
         <div className="pagination">
           <button
