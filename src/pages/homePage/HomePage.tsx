@@ -83,6 +83,7 @@ export const HomePage = () => {
     fetchPage();
   }, [currentPage]);
 
+
   return (
     <div className="HomeFilm">
       <Filter setSelectedCategory={setSelectedCategory} />
